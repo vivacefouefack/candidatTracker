@@ -30,6 +30,26 @@ It provides management of applications and reminders.
 - Centralized management of application statuses (sent, followed-up, rejected)
 - Filtering applications by status
 
+## Running the project localy
+
+1. Clone the project :
+   ```bash
+   git clone https://github.com/ton-utilisateur/apptracker-backend.git
+   cd apptracker-backend
+   ```
+
+2. Run the application with Maven :
+   ```bash
+   mvn spring-boot:run
+   ```
+
+3. Access the API :
+   ```
+   http://localhost:8484/api
+   ```
+
+---
+
 ## Author
 
 Developed by **vivace fouefack**  
