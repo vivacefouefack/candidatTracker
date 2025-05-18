@@ -8,6 +8,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.Future;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,13 +24,18 @@ public class Reminder {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @NotNull
     @ManyToOne
     @JoinColumn(name = "candidate_id")
     private Candidate candidate;
 
+    @NotNull
+    @Future
     private LocalDateTime reminderDate;
 
+    @NotEmpty
     private String message;
 
+    @NotNull
     private boolean isSent;
 }
