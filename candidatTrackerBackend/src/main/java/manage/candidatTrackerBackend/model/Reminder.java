@@ -15,6 +15,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Represents a reminder for a specific candidate application.
+ * A reminder includes a message, a scheduled date, and a flag to indicate whether it has been sent.
+ */
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor

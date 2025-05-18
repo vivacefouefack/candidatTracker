@@ -18,6 +18,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Represents a job application submitted by a user.
+ * Each application is linked to a user and may have multiple reminders.
+ */
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor

@@ -16,6 +16,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
+/**
+ * Represents a user of the application.
+ * Each user can manage multiple job applications.
+ */
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
