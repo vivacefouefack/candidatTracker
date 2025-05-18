@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import jakarta.validation.ConstraintViolation;
 
-public class RemiderTest extends Validate {
+public class ReminderTest extends Validate {
     
 
     private Reminder createValidReminder() {
