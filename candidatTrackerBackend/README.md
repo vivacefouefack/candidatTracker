@@ -34,7 +34,7 @@ It provides management of applications and reminders.
 
 1. Clone the project :
    ```bash
-   git clone https://github.com/ton-utilisateur/apptracker-backend.git
+   git clone https://github.com/vivacefouefack/candidatTracker.git
    cd apptracker-backend
    ```
 
