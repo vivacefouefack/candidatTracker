@@ -8,5 +8,5 @@ import manage.candidatTrackerBackend.model.User;
 
 public interface UserRepository extends CrudRepository<User,Integer> {
     
-    Optional<User> findByUsername(String username);
+    Optional<User> findByUserName(String username);
 }

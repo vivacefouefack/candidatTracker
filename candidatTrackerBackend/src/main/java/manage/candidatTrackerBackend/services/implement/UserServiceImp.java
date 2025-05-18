@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -14,12 +17,19 @@ import manage.candidatTrackerBackend.repository.UserRepository;
 import manage.candidatTrackerBackend.services.interfaces.IUserService;
 
 @Service
-public class UserServiceImp implements IUserService{
+public class UserServiceImp implements IUserService, UserDetailsService{
 
     @Autowired
     private UserRepository userRepository;
 
     private PasswordEncoder passwordEncoder;
+
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        return userRepository.findByUserName(username).orElseThrow(
+            () -> new  UsernameNotFoundException("not found"));
+    }
 
     @Override
     public UserDto register(String username, String password) {
@@ -33,7 +43,7 @@ public class UserServiceImp implements IUserService{
 
     @Override
     public UserDto login(String username, String password) {
-        Optional<User> optionalUser = userRepository.findByUsername(username);
+        Optional<User> optionalUser = userRepository.findByUserName(username);
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
             if (passwordEncoder.matches(password, user.getPassword())) {
@@ -62,5 +72,7 @@ public class UserServiceImp implements IUserService{
                 .map(User::getCandidate)
                 .orElse(List.of());
     }
+
+   
     
 }
