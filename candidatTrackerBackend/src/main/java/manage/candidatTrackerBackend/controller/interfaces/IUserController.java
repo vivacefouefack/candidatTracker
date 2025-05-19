@@ -17,6 +17,8 @@ public interface IUserController {
     @PostMapping("/register")
     ResponseEntity<Void> register(@RequestBody AuthenticationDto authenticationDto);
 
+    @PostMapping("/logout")
+    ResponseEntity<Void> logout();
 
     @GetMapping("/test")
     ResponseEntity<String> test();
