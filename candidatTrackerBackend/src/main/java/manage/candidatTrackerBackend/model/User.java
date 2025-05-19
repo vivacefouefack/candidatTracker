@@ -40,7 +40,7 @@ public class User implements UserDetails{
 
     @NotEmpty
     @Column(unique = true) 
-    private String username;
+    private String userName;
 
     @NotEmpty
     @Size(min=6)
@@ -57,6 +57,12 @@ public class User implements UserDetails{
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Collections.singletonList(new SimpleGrantedAuthority("ROLE_" + this.role));
+    }
+
+
+    @Override
+    public String getUsername() {
+        return userName;
     }
 
 }

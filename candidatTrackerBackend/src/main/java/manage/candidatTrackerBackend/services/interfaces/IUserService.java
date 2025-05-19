@@ -2,6 +2,7 @@ package manage.candidatTrackerBackend.services.interfaces;
 
 import java.util.List;
 
+import manage.candidatTrackerBackend.dto.CandidateDto;
 import manage.candidatTrackerBackend.dto.UserDto;
 import manage.candidatTrackerBackend.model.Candidate;
 import manage.candidatTrackerBackend.model.User;
@@ -48,4 +49,8 @@ public interface IUserService {
     List<Candidate> getMyCandidates(int userId);
 
     User loadUserByUserName(String username);
+
+    UserDto convertToUserDto(User user);
+
+    List<CandidateDto> convertToCandidatureDtoList(List<Candidate> candidates);
 }

@@ -21,7 +21,7 @@ public class UserTest extends Validate {
     @Test
     public void shouldDetectShortPassword() {
         User user = new User();
-        user.setUsername("vivace@gmail.com");
+        user.setUserName("vivace@gmail.com");
         user.setPassword("secur"); 
         user.setRole("USER");
 
@@ -32,7 +32,7 @@ public class UserTest extends Validate {
     @Test
     public void shouldValidateValidUser() {
         User user = new User();
-        user.setUsername("vivace@gmail.com");
+        user.setUserName("vivace@gmail.com");
         user.setPassword("secure");
         user.setRole("ADMIN");
 
@@ -53,7 +53,7 @@ public class UserTest extends Validate {
     @Test
     public void shouldDetectNullRole() {
         User user = new User();
-        user.setUsername("vivace@gmail.com");
+        user.setUserName("vivace@gmail.com");
         user.setPassword("securemypass");
 
         Set<ConstraintViolation<User>> violations = validator.validate(user);

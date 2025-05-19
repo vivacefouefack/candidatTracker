@@ -36,11 +36,12 @@ public class SecurityConfig {
                 .authorizeHttpRequests(
                         authorize ->
                                 authorize
-                                    .requestMatchers(POST,"/auth/login").permitAll()
-                                    .requestMatchers(POST,"/auth/register").permitAll()
-                                    .requestMatchers(POST,"/auth/logout").authenticated()
-                                    .requestMatchers(GET,"/getall").permitAll()
-                                    .requestMatchers(POST,"/auth/candidate/add").hasAnyRole("ADMIN","USER") 
+                                    .requestMatchers(POST,"/api/auth/login").permitAll()
+                                    .requestMatchers(POST,"/api/auth/register").permitAll()
+                                    .requestMatchers(POST,"/api/auth/logout").authenticated()
+                                    .requestMatchers(GET,"/api/getall").permitAll()
+                                    .requestMatchers(GET,"/api/auth/test").permitAll()
+                                    .requestMatchers(POST,"/api/auth/candidate/add").hasAnyRole("ADMIN","USER") 
                                     .anyRequest().authenticated())
                 .sessionManagement(httpSecurityManagementConfigurer ->
                     httpSecurityManagementConfigurer.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
