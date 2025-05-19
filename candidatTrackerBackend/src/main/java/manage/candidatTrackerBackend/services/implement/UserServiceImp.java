@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -26,7 +25,7 @@ public class UserServiceImp implements IUserService, UserDetailsService{
 
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    public User loadUserByUsername(String username) throws UsernameNotFoundException {
         return userRepository.findByUserName(username).orElseThrow(
             () -> new  UsernameNotFoundException("not found"));
     }
@@ -71,6 +70,11 @@ public class UserServiceImp implements IUserService, UserDetailsService{
         return userRepository.findById(userId)
                 .map(User::getCandidate)
                 .orElse(List.of());
+    }
+
+    @Override
+    public User loadUserByUserName(String username) {
+        return loadUserByUsername(username);
     }
 
    
