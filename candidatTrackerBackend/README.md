@@ -17,8 +17,26 @@ It provides management of applications and reminders.
 ---
 
 ## Project Structure
+```bash
+src/
+├── main/
+│   ├── java/manage/candidatTrackerBackend/
+│   │   ├── model/                # JPA entities
+│   │   ├── dto/                  # Data Transfer Objects 
+│   │   ├── controller/           # REST controllers
+│   │   ├── repository/           # Repository interfaces (Spring Data JPA)
+│   │   ├── security/             # Security configuration (JWT, filters)
+│   │   ├── services/             # Business logic 
+│   │   └── AppTrackerApplication.java  # Main application entry point
+│   └── resources/
+│       └── application.properties # Application configuration file
 
+├── test/
+│   └── java/manage/candidatTrackerBackend/
+│       ├── model/               # Unit tests for entities
+│       ├── controller/          # Unit/integration tests for controllers
 
+```
 
 ---
 
@@ -35,7 +53,7 @@ It provides management of applications and reminders.
 1. Clone the project :
    ```bash
    git clone https://github.com/vivacefouefack/candidatTracker.git
-   cd apptracker-backend
+   cd candidatTracker/candidatTrackerBackend
    ```
 
 2. Run the application with Maven :
@@ -45,7 +63,7 @@ It provides management of applications and reminders.
 
 3. Access the API :
    ```
-   http://localhost:8484/api
+   http://localhost:8484/api/auth/login
    ```
 
 ---
