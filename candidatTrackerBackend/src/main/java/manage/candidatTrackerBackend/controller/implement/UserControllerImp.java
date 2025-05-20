@@ -27,7 +27,7 @@ public class UserControllerImp  implements IUserController{
     @Autowired private JwtService jwtService;
 
     @Override
-    public ResponseEntity<AuthResponseDto> login(AuthenticationDto authenticationDto) {
+    public ResponseEntity<AuthResponseDto> login(@RequestBody AuthenticationDto authenticationDto) {
        try {
             final Authentication authenticate =authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(authenticationDto.getUsername(), authenticationDto.getPassword())
@@ -53,6 +53,16 @@ public class UserControllerImp  implements IUserController{
         try {
             userService.register(authenticationDto.getUsername(), authenticationDto.getPassword());
             return ResponseEntity.status(HttpStatus.CREATED).build();
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
+    }
+
+    @Override
+    public ResponseEntity<Void> logout(){
+        try {
+            jwtService.logout();
+            return ResponseEntity.ok().build();
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
