@@ -1,3 +1,5 @@
+# ======== BACKEND (Java, Spring Boot) ========
+
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
@@ -32,15 +34,16 @@ build/
 ### VS Code ###
 .vscode/
 
+# ======== FRONTEND (Angular TypeScript) ========
 
-# Compiled output >>>>f
-/dist
-/tmp
-/out-tsc
-/bazel-out
+# Compiled output 
+candiTrack/dist
+candiTrack/tmp
+candiTrack/out-tsc
+candiTrack/bazel-out
 
 # Node
-/node_modules
+candiTrack/node_modules
 npm-debug.log
 yarn-error.log
 
@@ -62,7 +65,7 @@ yarn-error.log
 .history/*
 
 # Miscellaneous
-/.angular/cache
+candiTrack/.angular/cache
 .sass-cache/
 /connect.lock
 /coverage
