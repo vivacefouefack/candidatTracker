@@ -1,4 +1,4 @@
-# CandiTrack - Full Stack Application
+# CandiTrack - full stack application
 
 This is a full stack application for managing job applications.  
 The project is split into two main parts:
@@ -8,7 +8,7 @@ The project is split into two main parts:
 
 ---
 
-## Project Structure
+## Project structure
 
 ```
 /
@@ -20,7 +20,7 @@ The project is split into two main parts:
 
 ---
 
-## Getting Started
+## Getting started
 
 ### 1. Clone the repository
 
@@ -31,7 +31,7 @@ cd candidatTracker
 
 ---
 
-## 🛠 Backend Setup (Spring Boot)
+## Backend setup (Spring Boot)
 
 Navigate to the backend directory:
 
@@ -54,7 +54,7 @@ The backend will start on: `http://localhost:8484`
 
 ---
 
-## Frontend Setup (Angular)
+## Frontend setup (Angular)
 
 Navigate to the frontend directory:
 
