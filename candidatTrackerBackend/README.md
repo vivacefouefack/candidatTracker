@@ -58,7 +58,7 @@ src/
 
 2. Run the application with Maven :
    ```bash
-   mvn spring-boot:run
+   ./mvnw spring-boot
    ```
 
 3. Access the API :

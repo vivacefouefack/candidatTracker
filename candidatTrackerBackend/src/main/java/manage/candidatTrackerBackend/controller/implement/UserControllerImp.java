@@ -70,7 +70,7 @@ public class UserControllerImp  implements IUserController{
 
     @Override
     public ResponseEntity<String> test(){
-        return ResponseEntity.status(HttpStatus.CREATED).body("je suis un déveleppeur passioner");
+        return ResponseEntity.status(HttpStatus.CREATED).body("je suis un déveleppeur");
     }
     
 }

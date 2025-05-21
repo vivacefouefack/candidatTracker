@@ -35,7 +35,7 @@ class UserControllerImpTest {
     }
 
     @Test
-    void testRegisterFail_DuplicateUser() throws Exception {
+    void testRegisterFailDuplicateUser() throws Exception {
         AuthenticationDto dto = new AuthenticationDto("vivace123@gmail.com", "password123");
 
         mockMvc.perform(post("/api/auth/register")
@@ -67,7 +67,7 @@ class UserControllerImpTest {
     }
 
     @Test
-    void testLoginFail_WrongPassword() throws Exception {
+    void testLoginFailWrongPassword() throws Exception {
         AuthenticationDto dto = new AuthenticationDto("vivace@gmail.com", "password1234");
 
         mockMvc.perform(post("/api/auth/login")
