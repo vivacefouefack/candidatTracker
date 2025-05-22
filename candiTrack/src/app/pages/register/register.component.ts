@@ -21,14 +21,16 @@ export class RegisterComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   register(form: NgForm) {
-    this.passwordMismatch = this.password !== this.confirmPassword;
+    this.passwordMismatch = form.value["password"] !== form.value["confirmPassword"];
     console.log("pass1")
 
     if (form.valid && !this.passwordMismatch) {
       console.log("pass2")
+      console.log(form.value["username"])
+      console.log(form.value["password"])
       this.authService.register({
-        username: this.username,
-        password: this.password
+        username: form.value["username"],
+        password: form.value["password"]
       }).subscribe({
         next: () => {
           alert("Inscription réussie !");

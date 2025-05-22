@@ -22,15 +22,19 @@ export class LoginComponent {
   login(form: NgForm) {
     if (form.valid) {
       console.log("pass2");
+      console.log(form.value["username"]);
       this.authService.login({
-        username: this.username,
-        password: this.password
+        username: form.value["username"],
+        password: form.value["password"]
       }).subscribe({
         next: (res) => {
           console.log(res);
           localStorage.setItem('token', res.token);
+          localStorage.setItem('username', form.value["username"]);
           this.errorMessage = null;
-          //this.router.navigate(['/home']);
+          console.log("pass3");
+          this.router.navigate(['/home']);
+          console.log("pass4");
         },
         error: (err) => {
           this.errorMessage = "échec de connexion";

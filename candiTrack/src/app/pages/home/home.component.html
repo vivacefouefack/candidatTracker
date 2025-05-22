@@ -1,23 +1,22 @@
-<div class="home-page">
-  <header class="header">
-    <div class="app-name">CandiTrack</div>
+<div class="home-container">
+  <header class="app-header">
+    <div class="app-title">CandiTrack</div>
     <div class="user-info">
       <span class="username">{{ username }}</span>
       <button (click)="logout()">Déconnexion</button>
     </div>
   </header>
 
-  <div class="main-content">
+  <main class="app-main">
     <nav class="sidebar">
       <ul>
-        <li><a routerLink="/dashboard">Dashboard</a></li>
-        <li><a routerLink="/candidates">Candidates</a></li>
-        <li><a routerLink="/statistics">Statistics</a></li>
+        <li><a routerLink="/candidates">Candidats</a></li>
+        <li><a routerLink="/dashboard">Tableau de bord</a></li>
+        <li><a routerLink="/stats">Statistiques</a></li>
       </ul>
     </nav>
-
-    <section class="content">
+    <section class="main-content">
       <!--<router-outlet></router-outlet> -->
     </section>
-  </div>
+  </main>
 </div>

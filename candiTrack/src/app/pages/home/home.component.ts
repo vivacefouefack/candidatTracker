@@ -15,7 +15,7 @@ export class HomeComponent {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('username');
     if (token && user) {
-      this.username = "vivace@gmail.com";
+      this.username = user;
     } else {
       this.router.navigate(['/login']);
     }
