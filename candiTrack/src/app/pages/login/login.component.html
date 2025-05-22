@@ -1,1 +1,21 @@
-<p>login works!</p>
+<div class="form-container">
+  <h1>CandiTrack</h1>
+  <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+
+    <div *ngIf="loginForm.submitted && loginForm.controls['username']?.invalid">
+      <small class="error-message">nom d'utilisateur invalide.</small>
+    </div>
+    <input type="email" name="username"  placeholder="Nom d'utilisateur" ngModel email required>
+
+    <div *ngIf="loginForm.submitted && loginForm.controls['password']?.invalid">
+      <small class="error-message">mot de passe requis.</small>
+    </div>
+    <input type="password" name="password" placeholder="Mot de passe" ngModel required>
+
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+    <button type="submit">Se connecter</button>
+    <p>Vous n'avez pas de compte ? <a routerLink="/register">Créer un compte</a></p>
+  </form>
+</div>

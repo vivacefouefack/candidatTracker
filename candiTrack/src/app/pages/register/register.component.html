@@ -1,1 +1,30 @@
-<p>register works!</p>
+<div class="form-container">
+  <h1>CandiTrack</h1>
+  <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+
+    <div *ngIf="registerForm.submitted && registerForm.controls['username']?.invalid">
+      <small class="error-message">adresse email invalide.</small>
+    </div>
+    <input type="email" name="username" ngModel placeholder="Adresse email" required email/>
+
+
+    <div *ngIf="registerForm.submitted && registerForm.controls['password']?.invalid">
+      <small class="error-message">mot de passe requis (min. 6 caractères).</small>
+    </div>
+    <input type="password" name="password" ngModel placeholder="Mot de passe" required minlength="6"/>
+
+
+    <div *ngIf="passwordMismatch">
+      <small class="error-message">les mots de passe ne correspondent pas.</small>
+    </div>
+    <input type="password" name="confirmPassword" ngModel placeholder="Confirmer le mot de passe" required/>
+
+
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+
+    <button type="submit" >S'inscrire</button>
+    <p><a routerLink="/login">Retour</a></p>
+  </form>
+</div>
