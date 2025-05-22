@@ -30,7 +30,7 @@ export class LoginComponent {
           console.log(res);
           localStorage.setItem('token', res.token);
           this.errorMessage = null;
-          // this.router.navigate(['/dashboard']);
+          //this.router.navigate(['/home']);
         },
         error: (err) => {
           this.errorMessage = "échec de connexion";
